@@ -3,21 +3,27 @@ var cols = 200
 
 function initialise(){
     console.log("Woo hoo!")
-    createTable();
+    createTable();  
     createMiniGrid();
 }
 
 function createTable(){
     var gridContainer = document.getElementById("grid");
     for(var i=0;i<200;i++){
-        var div = document.createElement("div");
-        gridContainer.appendChild(div);
+        setTimeout(function() { 
+            var div = document.createElement("div");
+            div.style.background = "red";
+            gridContainer.appendChild(div); 
+        }, 50 * i);
     }
     
     for(var i=0;i<10;i++){
-        var base = document.createElement("div");
-        base.setAttribute('class','taken');
-        gridContainer.appendChild(base);
+        setTimeout(function() { 
+            var base = document.createElement("div");
+            base.setAttribute('class','taken');
+            base.style.background = "magenta";
+            gridContainer.appendChild(base);
+        }, 50 * i);   
     }
 }
 
